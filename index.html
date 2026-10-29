@@ -7,8 +7,10 @@
   <meta name="description" content="Revista interactiva sobre desarrollo humano, educación y salud en Guatemala">
   <title>Guatemala: Más allá de las cifras</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="salud.css">
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
   <script src="script.js" defer></script>
+<script src="salud.js" defer></script>
 </head>
 
 <body>
@@ -477,7 +479,142 @@
 <section id="salud" class="seccion fondo-claro">
   <p class="subtitulo">CAPÍTULO 03</p>
   <h2>Salud: un derecho, diferentes realidades.</h2>
-  <p>Contenido reservado para la investigación del equipo.</p>
+  <div id="salud-i7" class="salud-i7">
+  <p class="subtitulo">SALUD EN CIFRAS</p>
+  <h3>La salud también refleja la desigualdad</h3>
+  <p>Explora indicadores de salud en Guatemala y descubre cómo las condiciones económicas, territoriales y sociales influyen en el acceso a la atención.</p>
+
+  <div class="salud-grid">
+
+    <article class="salud-tarjeta">
+      <p class="subtitulo">INDICADOR 01</p>
+      <h3>Esperanza de vida al nacer</h3>
+      <p>La OMS reporta una esperanza de vida nacional de 71.6 años para 2023.</p>
+      <div class="salud-dato">
+        <strong>71.6</strong>
+        <span>años · Guatemala, 2023</span>
+      </div>
+      <p class="salud-nota">El desglose entre hombres y mujeres está pendiente de verificación. No se presentan valores estimados como si fueran datos oficiales.</p>
+      <p class="fuente">Fuente: OMS, perfil de Guatemala, citado en la investigación de Sofía.</p>
+    </article>
+
+    <article class="salud-tarjeta">
+      <p class="subtitulo">INDICADOR 02</p>
+      <h3>Mortalidad materna por grupo étnico</h3>
+      <p>Razón de muertes maternas por cada 100,000 nacidos vivos, según pertenencia étnica, 2022.</p>
+      <div class="salud-grafico" data-grafico="materna"></div>
+      <p class="salud-interpretacion">La desigualdad étnica puede relacionarse con barreras territoriales, económicas, lingüísticas y de acceso oportuno a la atención.</p>
+      <p class="fuente">Fuente: MSPAS / SEGEPLAN, serie 2022. Valores sujetos a cotejo final con el compendio estadístico.</p>
+    </article>
+
+    <article class="salud-tarjeta">
+      <p class="subtitulo">INDICADOR 03</p>
+      <h3>Acceso a atención del parto</h3>
+      <p>Porcentaje de partos atendidos por personal especializado según área de residencia.</p>
+      <div class="salud-grafico" data-grafico="partos"></div>
+      <p class="salud-interpretacion">La diferencia entre las áreas urbana y rural es de 25.9 puntos porcentuales.</p>
+      <p class="fuente">Fuente: presentación de clase «Determinantes sociales de la salud», con cifras atribuidas a ENCOVI 2023. Pendiente de contraste con la fuente original.</p>
+    </article>
+
+    <article class="salud-tarjeta">
+      <p class="subtitulo">INDICADOR 04</p>
+      <h3>Desnutrición crónica infantil</h3>
+      <p>Porcentaje de menores de cinco años afectados por desnutrición crónica.</p>
+      <div class="salud-grafico" data-grafico="nutricion"></div>
+      <p class="salud-interpretacion">La desnutrición crónica afecta el crecimiento infantil y se relaciona con la alimentación, el saneamiento y las condiciones de vida.</p>
+      <p class="fuente">Fuentes citadas por Sofía: ENSMI 2014–2015 y ENDESA 2025. Las encuestas son diferentes y sus cifras no constituyen una serie directamente comparable.</p>
+    </article>
+  </div>
+
+  <article class="salud-tarjeta">
+    <p class="subtitulo">INDICADOR COMPLEMENTARIO</p>
+    <h3>Cobertura de servicios esenciales</h3>
+    <div class="salud-dato">
+      <strong>58/100</strong>
+      <span>Índice de cobertura, 2023</span>
+    </div>
+    <p>Este índice resume la cobertura de servicios esenciales de salud. No significa que solamente el 58 % de las personas reciban atención.</p>
+    <p class="fuente">Fuente: OMS y Banco Mundial, informe de monitoreo de cobertura sanitaria universal de 2025, citado por Sofía.</p>
+  </article>
+
+  <div class="salud-separador">
+    <p class="subtitulo">PARTICIPA Y REFLEXIONA</p>
+    <h3>La salud más allá de las cifras</h3>
+    <p>Interactúa con las actividades y reflexiona sobre las desigualdades en Guatemala.</p>
+  </div>
+
+  <article class="salud-tarjeta">
+    <p class="subtitulo">ACTIVIDAD 01</p>
+    <h3>Ruta de acceso a los servicios de salud</h3>
+    <p>Selecciona las etapas para conocer una ruta general de atención. La ruta real depende de la comunidad y de la gravedad del caso.</p>
+
+    <div id="salud-ruta-botones" class="salud-ruta-botones"></div>
+    <div id="salud-ruta-detalle" class="salud-ruta-detalle" aria-live="polite"></div>
+
+    <div class="salud-navegacion">
+      <button type="button" id="salud-anterior">Anterior</button>
+      <button type="button" id="salud-siguiente">Siguiente</button>
+    </div>
+
+    <h4>Comparación con los casos comunitarios</h4>
+    <div class="salud-casos">
+      <div>
+        <h4>Santos · Camotán, Chiquimula</h4>
+        <p>Una brigada apoyada por UNICEF identificó desnutrición aguda moderada y facilitó atención y seguimiento nutricional. El caso muestra cómo los servicios pueden acercarse a las familias.</p>
+      </div>
+      <div>
+        <h4>Teresa López · Chiantla, Huehuetenango</h4>
+        <p>Como consejera comunitaria del proyecto Q’anil, Teresa orienta a las familias sobre nutrición, lactancia e higiene y ayuda a derivar casos a los servicios de salud.</p>
+      </div>
+    </div>
+
+    <p class="salud-interpretacion">En una ruta convencional, la persona suele desplazarse al establecimiento de salud. En los casos comunitarios documentados, brigadas o consejeras acercan prevención, orientación y acompañamiento a las familias.</p>
+
+    <label for="salud-comparacion">¿En qué se diferencia tu ruta de los casos investigados?</label>
+    <textarea id="salud-comparacion" rows="4" placeholder="Escribe tu comparación..."></textarea>
+  </article>
+
+  <article class="salud-tarjeta">
+    <p class="subtitulo">ACTIVIDAD 02</p>
+    <h3>¿Qué relación existe entre salud y pobreza?</h3>
+    <p>Reflexiona sobre cómo el dinero, el transporte, la alimentación y las condiciones de vivienda pueden afectar la salud.</p>
+
+    <label for="salud-pobreza">Tu reflexión</label>
+    <textarea id="salud-pobreza" rows="4" placeholder="Escribe aquí tu respuesta..."></textarea>
+
+    <button type="button" id="salud-mostrar-reflexion" aria-expanded="false">Mostrar reflexión de referencia</button>
+
+    <div id="salud-reflexion-ejemplo" class="salud-interpretacion" hidden>
+      La pobreza puede dificultar el acceso a alimentos nutritivos, agua segura, transporte y atención médica. Al mismo tiempo, las enfermedades pueden provocar gastos y pérdida de ingresos, reforzando el ciclo de pobreza.
+    </div>
+  </article>
+
+  <article class="salud-tarjeta">
+    <p class="subtitulo">ACTIVIDAD 03</p>
+    <h3>Tres acciones para mejorar la salud en dos comunidades</h3>
+    <p>Selecciona una comunidad para explorar tres propuestas basadas en los problemas identificados en los casos de Sofía.</p>
+
+    <label for="salud-comunidad">Selecciona una comunidad</label>
+    <select id="salud-comunidad">
+      <option value="camotan">El Guayabo, Camotán, Chiquimula</option>
+      <option value="chiantla">Sanguijela, Chiantla, Huehuetenango</option>
+    </select>
+
+    <ol id="salud-lista-propuestas"></ol>
+
+    <label for="salud-propuesta-personal">¿Qué acción consideras más importante y por qué?</label>
+    <textarea id="salud-propuesta-personal" rows="4" placeholder="Escribe tu propuesta..."></textarea>
+  </article>
+
+  <article class="salud-tarjeta">
+    <h3>Guarda tus reflexiones</h3>
+    <p>Presiona el botón para copiar tus respuestas. No se envían a ningún servidor.</p>
+    <button type="button" id="salud-copiar">Copiar mis respuestas</button>
+    <p id="salud-mensaje" role="status" aria-live="polite"></p>
+  </article>
+
+  <p class="fuente">Casos comunitarios: UNICEF Guatemala (2025), historia de Santos; Naciones Unidas en Guatemala (2025), historia de Teresa López. Consulta las referencias completas en la investigación de Sofía.</p>
+</div>
 </section>
 
 <!-- REFERENCIAS EN ORDEN ALFABÉTICO -->
