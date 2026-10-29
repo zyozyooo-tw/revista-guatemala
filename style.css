@@ -595,3 +595,38 @@ footer p { color: var(--menta); }
   }
 }
 
+
+
+/* CAPÍTULO 03: reutiliza colores y tipografías de la revista */
+.capitulo-salud .salud-bloque { margin: 36px 0 58px; }
+.capitulo-salud .section-heading { max-width: 850px; margin-bottom: 25px; }
+.capitulo-salud .section-heading h2 { font-size: clamp(27px,3vw,40px); margin: 7px 0 12px; }
+.capitulo-salud .section-heading p { line-height: 1.7; }
+.capitulo-salud .eyebrow { color: var(--verde); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.capitulo-salud .prose { max-width: 900px; }
+.capitulo-salud .note, .capitulo-salud .takeaway { border-left: 4px solid var(--verde); background: var(--claro); padding: 16px 20px; margin: 18px 0; border-radius: 0 12px 12px 0; }
+.capitulo-salud .note p { margin: 5px 0 0; }
+.capitulo-salud .case-grid, .capitulo-salud .program-grid, .capitulo-salud .fact-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.capitulo-salud .case, .capitulo-salud .salud-programa, .capitulo-salud .salud-dato { background: #fff; border: 1px solid var(--menta); border-radius: 15px; overflow: hidden; color: var(--texto); }
+.capitulo-salud .photo { position: relative; }
+.capitulo-salud .photo img { width: 100%; height: 235px; object-fit: cover; display: block; }
+.capitulo-salud .photo span { position: absolute; bottom: 12px; left: 12px; background: var(--oscuro); color: white; padding: 7px 12px; border-radius: 6px; font-size: 12px; }
+.capitulo-salud .case-body { padding: 24px; }
+.capitulo-salud .case-body h3 { margin: 8px 0; }
+.capitulo-salud .case-body small { display: block; color: var(--gris); margin-top: 16px; line-height: 1.6; }
+.capitulo-salud a { color: var(--verde); overflow-wrap: anywhere; }
+.capitulo-salud .program-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.capitulo-salud .salud-programa { padding: 24px; }
+.capitulo-salud .salud-programa h3 { font-size: 22px; }
+.capitulo-salud .salud-programa button { padding: 12px 16px; border: 0; border-radius: 8px; background: var(--verde); color: white; font-weight: 700; }
+.capitulo-salud .salud-detalles { padding-top: 15px; }
+.capitulo-salud .salud-dato { text-align: left; padding: 24px; cursor: pointer; font: inherit; }
+.capitulo-salud .salud-dato:hover, .capitulo-salud .salud-dato:focus-visible { border-color: var(--verde); }
+.capitulo-salud .salud-valor { display: block; font-size: clamp(27px,3vw,40px); font-weight: 700; color: var(--verde); }
+.capitulo-salud .salud-etiqueta, .capitulo-salud .salud-periodo, .capitulo-salud .salud-explicacion { display: block; margin-top: 9px; }
+.capitulo-salud .salud-periodo, .capitulo-salud .footnote { color: var(--gris); font-size: 13px; }
+.capitulo-salud .salud-explicacion { line-height: 1.65; }
+.capitulo-salud #salud-sourceList { padding-left: 22px; max-width: 950px; }
+.capitulo-salud #salud-sourceList li { margin-bottom: 12px; line-height: 1.65; }
+@media(max-width: 850px) { .capitulo-salud .program-grid { grid-template-columns: 1fr; } }
+@media(max-width: 650px) { .capitulo-salud .case-grid, .capitulo-salud .fact-grid { grid-template-columns: 1fr; } .capitulo-salud .case-body { padding: 18px; } }
