@@ -3,21 +3,40 @@
   const root = document.getElementById('salud-i7');
   if (!root) return;
 
+
   const graficos = {
+    esperanza: {
+      max: 80,
+      unidad: 'años',
+      filas: [
+        ['Mujeres', 74.9],
+        ['Hombres', 70.3]
+      ]
+    },
     materna: {
       max: 160,
       unidad: 'por 100,000',
-      filas: [['Indígenas', 144], ['No indígenas', 68]]
+      filas: [
+        ['Indígenas', 144],
+        ['No indígenas', 68]
+      ]
     },
     partos: {
       max: 100,
       unidad: '%',
-      filas: [['Área urbana', 77.8], ['Área rural', 51.9]]
+      filas: [
+        ['Médico/a o ginecólogo/a', 63.9],
+        ['Comadrona', 25.3],
+        ['Enfermería', 8.4]
+      ]
     },
     nutricion: {
       max: 100,
       unidad: '%',
-      filas: [['ENSMI 2014-2015', 46.5], ['ENDESA 2025', 42.0]]
+      filas: [
+        ['ENSMI 2014-2015', 46.5],
+        ['ENDESA 2025', 42.0]
+      ]
     }
   };
 
