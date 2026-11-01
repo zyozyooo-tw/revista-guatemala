@@ -1,0 +1,289 @@
+/* Integrante 5 */
+
+.indicadores-edu {
+  min-width: 0;
+}
+
+.indicadores-edu .ie-nota {
+  padding: 20px;
+  margin: 22px 0;
+  background: var(--claro);
+  border-left: 4px solid var(--verde);
+  border-radius: 0 12px 12px 0;
+}
+
+.indicadores-edu .ie-nota p {
+  margin: 8px 0;
+}
+
+.indicadores-edu .ie-panel {
+  margin-top: 30px;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--menta);
+  border-radius: 16px;
+}
+
+.indicadores-edu h4 {
+  margin: 12px 0 18px;
+  font-size: clamp(24px, 3vw, 32px);
+}
+
+.indicadores-edu h5 {
+  font-size: 23px;
+  margin: 25px 0 15px;
+}
+
+.indicadores-edu .ie-comparacion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin: 25px 0;
+}
+
+.indicadores-edu .ie-grafico {
+  min-width: 0;
+  margin: 0;
+  padding: 20px;
+  background: var(--crema);
+  border-radius: 12px;
+}
+
+.indicadores-edu figcaption {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.indicadores-edu .ie-escala {
+  margin: 8px 0 20px;
+  font-size: 12px;
+  color: var(--gris);
+}
+
+.indicadores-edu .ie-fila {
+  display: grid;
+  grid-template-columns: minmax(85px, 1fr) minmax(40px, 1fr) 68px;
+  gap: 10px;
+  align-items: center;
+  margin: 18px 0;
+  font-size: 13px;
+}
+
+.indicadores-edu .ie-fila > span {
+  overflow-wrap: anywhere;
+}
+
+.indicadores-edu .ie-fila strong {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.indicadores-edu .ie-pista {
+  height: 16px;
+  overflow: hidden;
+  background: var(--menta);
+  border-radius: 4px;
+}
+
+.indicadores-edu .ie-barra {
+  height: 100%;
+  background: var(--verde);
+  border-radius: 4px;
+}
+
+.indicadores-edu .ie-tabla {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--menta);
+  border-radius: 12px;
+}
+
+.indicadores-edu table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.indicadores-edu caption {
+  padding: 16px;
+  text-align: left;
+  font-weight: 700;
+  background: var(--claro);
+}
+
+.indicadores-edu th,
+.indicadores-edu td {
+  padding: 12px 15px;
+  text-align: left;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--menta);
+}
+
+.indicadores-edu thead {
+  background: var(--crema);
+}
+
+.indicadores-edu tbody th {
+  font-weight: 500;
+}
+
+.indicadores-edu td {
+  white-space: nowrap;
+}
+
+.indicadores-edu .ie-interpretacion {
+  padding-left: 16px;
+  border-left: 3px solid var(--menta);
+}
+
+.indicadores-edu .ie-fuente {
+  font-size: 13px;
+  color: var(--gris);
+  overflow-wrap: anywhere;
+}
+
+.indicadores-edu a {
+  color: var(--verde);
+}
+
+.indicadores-edu select {
+  margin: 15px 0 20px 10px;
+  padding: 10px;
+  max-width: 100%;
+  font: inherit;
+  color: var(--texto);
+  background: #fff;
+  border: 1px solid var(--gris);
+  border-radius: 8px;
+}
+
+.indicadores-edu fieldset {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--menta);
+  border-radius: 12px;
+}
+
+.indicadores-edu legend {
+  padding: 0 8px;
+  font-weight: 700;
+}
+
+.indicadores-edu .ie-opcion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px;
+  margin: 10px 0;
+  background: var(--crema);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.indicadores-edu input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--verde);
+}
+
+.indicadores-edu .ie-boton {
+  min-height: 44px;
+  padding: 12px 18px;
+  margin: 12px 0;
+  font: inherit;
+  line-height: 1.5;
+  color: #fff;
+  background: var(--verde);
+  border: 2px solid var(--verde);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.indicadores-edu .ie-boton:hover {
+  background: var(--oscuro);
+}
+
+.indicadores-edu .ie-secundario {
+  color: var(--verde);
+  background: transparent;
+}
+
+.indicadores-edu .ie-secundario:hover,
+.indicadores-edu .ie-secundario[aria-pressed="true"] {
+  color: #fff;
+  background: var(--verde);
+}
+
+.indicadores-edu .ie-propuestas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.indicadores-edu .ie-actividad {
+  margin-top: 35px;
+}
+
+.indicadores-edu textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 15px;
+  padding: 15px;
+  font: inherit;
+  line-height: 1.6;
+  color: var(--texto);
+  border: 1px solid var(--gris);
+  border-radius: 8px;
+  resize: vertical;
+}
+
+.indicadores-edu #ie-resultado:not(:empty) {
+  padding: 15px;
+  background: var(--claro);
+  border-radius: 8px;
+}
+
+.indicadores-edu .ie-referencias p {
+  padding-left: 1.27cm;
+  text-indent: -1.27cm;
+  overflow-wrap: anywhere;
+}
+
+.indicadores-edu :is(button, select, textarea, input, a):focus-visible {
+  outline: 3px solid var(--oscuro);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1000px) {
+  .indicadores-edu .ie-comparacion {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .indicadores-edu .ie-panel {
+    padding: 20px 14px;
+  }
+
+  .indicadores-edu .ie-grafico {
+    padding: 15px 10px;
+  }
+
+  .indicadores-edu .ie-fila {
+    grid-template-columns: minmax(75px, 1fr) minmax(30px, 1fr) 60px;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .indicadores-edu .ie-propuestas {
+    flex-direction: column;
+  }
+
+  .indicadores-edu select {
+    display: block;
+    margin-left: 0;
+  }
+}
