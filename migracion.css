@@ -1,0 +1,149 @@
+/* Capítulo Migración: conserva la paleta y las fuentes de style.css. */
+.cuadricula.migra-indice {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.capitulo-migracion {
+  background: var(--crema);
+  color: var(--texto);
+  scroll-margin-top: 2rem;
+}
+
+.capitulo-migracion .migra-entradilla {
+  max-width: 760px;
+  color: var(--gris);
+  font-size: 1.15rem;
+}
+
+.capitulo-migracion .migra-bloque {
+  margin-top: 56px;
+}
+
+.capitulo-migracion .migra-bloque > h3 {
+  margin: 10px 0 22px;
+  font-size: clamp(26px, 3vw, 38px);
+}
+
+.capitulo-migracion .migra-investigacion {
+  max-width: 900px;
+}
+
+.capitulo-migracion .migra-investigacion p {
+  margin: 0 0 22px;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.capitulo-migracion a {
+  color: var(--verde);
+  text-underline-offset: .2em;
+  overflow-wrap: anywhere;
+}
+
+.capitulo-migracion .migra-controles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin: 24px 0;
+}
+
+.capitulo-migracion .migra-controles p {
+  margin: 0;
+  color: var(--gris);
+}
+
+.capitulo-migracion .migra-alternar {
+  min-height: 44px;
+  border: 1px solid var(--verde);
+  border-radius: 8px;
+  padding: 12px 18px;
+  background: var(--verde);
+  color: var(--crema);
+  font: inherit;
+  font-weight: 700;
+}
+
+.capitulo-migracion .migra-datos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 22px;
+}
+
+.capitulo-migracion .migra-dato {
+  min-width: 0;
+  border: 1px solid var(--menta);
+  border-radius: 15px;
+  background: var(--claro);
+}
+
+.capitulo-migracion .migra-dato[open] {
+  border-color: var(--verde);
+}
+
+.capitulo-migracion .migra-dato summary {
+  min-height: 72px;
+  padding: 24px;
+  color: var(--verde);
+  font-weight: 700;
+  line-height: 1.6;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.capitulo-migracion .migra-respuesta {
+  padding: 0 24px 24px;
+}
+
+.capitulo-migracion .migra-respuesta p {
+  margin: 0 0 14px;
+}
+
+.capitulo-migracion .migra-respuesta a {
+  font-size: .9rem;
+}
+
+.capitulo-migracion :is(summary, button, a):focus-visible {
+  outline: 3px solid var(--verde);
+  outline-offset: 4px;
+}
+
+.capitulo-migracion .migra-alternar:hover {
+  background: var(--oscuro);
+}
+
+.capitulo-migracion .migra-aviso {
+  max-width: 850px;
+  margin-top: 24px;
+  color: var(--gris);
+  font-size: .9rem;
+}
+
+.lista-referencias [data-ref-migracion] {
+  scroll-margin-top: 2rem;
+}
+
+@media (max-width: 1100px) {
+  .cuadricula.migra-indice {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .capitulo-migracion .migra-datos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .capitulo-migracion .migra-dato summary {
+    padding: 20px;
+  }
+  .capitulo-migracion .migra-respuesta {
+    padding: 0 20px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cuadricula.migra-indice {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
