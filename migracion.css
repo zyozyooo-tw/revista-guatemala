@@ -147,3 +147,303 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+/* MIGRACIÓN · Paleta y tipografías existentes de la revista */
+
+/* Fondo general, como el capítulo de Salud */
+#indicadores-migracion {
+  background: var(--claro);
+  color: var(--texto);
+}
+
+#indicadores-migracion > .subtitulo {
+  color: var(--verde);
+}
+
+#indicadores-migracion > h2 {
+  max-width: 900px;
+  color: var(--oscuro);
+}
+
+/* Notas blancas para distinguirlas del fondo verde claro */
+#indicadores-migracion .mi-nota {
+  margin: 28px 0;
+  padding: 24px 28px;
+  background: #fff;
+  color: var(--texto);
+  border: 1px solid var(--menta);
+  border-left: 4px solid var(--verde);
+  border-radius: 0 14px 14px 0;
+  line-height: 1.8;
+}
+
+#indicadores-migracion .mi-nota > strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--verde);
+}
+
+#indicadores-migracion .mi-nota p {
+  margin: 10px 0;
+}
+
+/* Bloques de indicadores */
+#indicadores-migracion .mi-panel {
+  margin-top: 32px;
+  padding: clamp(22px, 3vw, 38px);
+  background: #fff;
+  color: var(--texto);
+  border: 1px solid var(--menta);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(23, 62, 50, 0.05);
+}
+
+#indicadores-migracion .mi-panel > .subtitulo {
+  margin-top: 0;
+  color: var(--verde);
+}
+
+#indicadores-migracion h3 {
+  margin: 10px 0 20px;
+  color: var(--oscuro);
+}
+
+#indicadores-migracion h4 {
+  color: var(--oscuro);
+}
+
+/* Tablas */
+#indicadores-migracion .mi-tabla {
+  max-width: 100%;
+  margin: 25px 0 30px;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid var(--menta);
+  border-radius: 12px;
+}
+
+#indicadores-migracion table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+#indicadores-migracion caption {
+  padding: 18px 20px;
+  text-align: left;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--oscuro);
+  background: var(--menta);
+}
+
+#indicadores-migracion th,
+#indicadores-migracion td {
+  padding: 15px 18px;
+  text-align: left;
+  line-height: 1.6;
+  border-bottom: 1px solid var(--claro);
+}
+
+/* Encabezados verdes con texto claro */
+#indicadores-migracion thead th {
+  background: var(--verde);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Evita que el estilo global de th oscurezca la primera columna */
+#indicadores-migracion tbody th {
+  background: transparent;
+  color: var(--texto);
+  font-weight: 600;
+}
+
+#indicadores-migracion tbody td {
+  color: var(--texto);
+  white-space: nowrap;
+}
+
+#indicadores-migracion tbody tr:nth-child(even) {
+  background: var(--crema);
+}
+
+#indicadores-migracion tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+/* Selectores */
+#indicadores-migracion label {
+  display: block;
+  color: var(--oscuro);
+  line-height: 1.6;
+}
+
+#indicadores-migracion select {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  min-height: 46px;
+  margin: 12px 0 25px;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--texto);
+  background: var(--crema);
+  border: 1px solid var(--gris);
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+/* Superficie de los gráficos */
+#indicadores-migracion figure {
+  margin: 25px 0;
+  padding: 24px;
+  background: var(--crema);
+  border: 1px solid var(--menta);
+  border-radius: 14px;
+}
+
+#indicadores-migracion figcaption {
+  color: var(--oscuro);
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* Etiquetas y barras */
+#indicadores-migracion .mi-fila {
+  display: grid;
+  grid-template-columns: minmax(90px, 1fr) minmax(50px, 3fr) 85px;
+  align-items: center;
+  gap: 14px;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+#indicadores-migracion .mi-fila > span {
+  color: var(--texto);
+  font-weight: 500;
+}
+
+#indicadores-migracion .mi-fila strong {
+  color: var(--verde);
+  text-align: right;
+  white-space: nowrap;
+}
+
+#indicadores-migracion .mi-pista {
+  height: 22px;
+  overflow: hidden;
+  background: var(--menta);
+  border-radius: 20px;
+}
+
+#indicadores-migracion .mi-barra {
+  height: 100%;
+  background: var(--verde);
+  border-radius: 20px;
+}
+
+#indicadores-migracion .mi-mujeres {
+  background: var(--gris);
+}
+
+#indicadores-migracion .mi-total {
+  background: var(--oscuro);
+}
+
+/* Grupos de edad blancos dentro del gráfico crema */
+#indicadores-migracion .mi-grupo-edad {
+  margin-top: 18px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid var(--menta);
+  border-radius: 12px;
+}
+
+#indicadores-migracion .mi-grupo-edad h4 {
+  margin: 0 0 15px;
+  font-size: 21px;
+}
+
+/* Lectura del gráfico: verde claro dentro del panel blanco */
+#indicadores-migracion .mi-panel .mi-nota {
+  background: var(--claro);
+}
+
+/* Fuentes y referencias */
+#indicadores-migracion .mi-fuente {
+  margin-top: 18px;
+  color: var(--gris);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+#indicadores-migracion a {
+  color: var(--verde);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#indicadores-migracion a:hover {
+  color: var(--oscuro);
+}
+
+#indicadores-migracion .mi-referencias p {
+  padding-left: 1.27cm;
+  text-indent: -1.27cm;
+  overflow-wrap: anywhere;
+}
+
+/* Navegación con teclado */
+#indicadores-migracion :is(a, select):focus-visible {
+  outline: 3px solid var(--oscuro);
+  outline-offset: 4px;
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  #indicadores-migracion .mi-panel {
+    padding: 22px 15px;
+    border-radius: 14px;
+  }
+
+  #indicadores-migracion .mi-nota {
+    padding: 20px;
+  }
+
+  #indicadores-migracion figure {
+    padding: 18px 12px;
+  }
+
+  #indicadores-migracion .mi-grupo-edad {
+    padding: 16px 10px;
+  }
+
+  #indicadores-migracion .mi-fila {
+    grid-template-columns: 65px minmax(25px, 1fr) 68px;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  #indicadores-migracion th,
+  #indicadores-migracion td {
+    padding: 12px;
+  }
+
+  #indicadores-migracion select {
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+/* Superficies blancas dentro de Migración */
+#indicadores-migracion tbody tr,
+#indicadores-migracion tbody tr:nth-child(even),
+#indicadores-migracion select,
+#indicadores-migracion figure,
+#indicadores-migracion .mi-grupo-edad {
+  background: #fff;
+}

@@ -17,8 +17,14 @@
   <script src="salud.js" defer></script>
   <script src="educacion.js" defer></script>
   <script src="indicadores-educativos.js" defer></script>
-  <script src="migracion.js" defer></script>
-  <script src="economia-remesas.js" defer></script>
+
+<link rel="stylesheet" href="migracion.css">
+<link rel="stylesheet" href="ingresos.css">
+
+<script src="migracion.js" defer></script>
+<script src="economia-remesas.js" defer></script>
+<script src="ingresos.js" defer></script>
+
 </head>
 
 <body>
@@ -30,9 +36,15 @@
     <a href="#historias">Historias</a>
     <a href="#educacion">Educación</a>
     <a href="#salud">Salud</a>
+
+
     <a href="#migracion">Migración</a>
-    <a href="#economia">Economía</a>
-    <a href="#remesas">Remesas</a>
+<a href="#indicadores-migracion">Estadísticas migratorias</a>
+<a href="#economia">Economía</a>
+<a href="#ingresos-trabajo">Ingresos y trabajo</a>
+<a href="#remesas">Remesas</a>
+
+
     <a href="#referencias">Referencias</a>
   </nav>
 </header>
@@ -1109,6 +1121,588 @@
   <noscript><p class="er-nota">Sin JavaScript puedes consultar el gráfico mensual y las tablas con los cuatro destinos y sus definiciones.</p></noscript>
 </section>
 <!-- FIN ECONOMÍA Y REMESAS -->
+<!-- INICIO DEL APORTE: INGRESOS Y TRABAJO · INTEGRANTE 2 -->
+<div id="ingresos-trabajo" class="seccion capitulo-ingresos">
+  <p class="subtitulo">INDICADORES DE INGRESOS Y TRABAJO</p>
+
+  <h2>Salario mínimo, canasta básica y brecha de ingresos</h2>
+
+  <aside class="it-nota">
+    <strong>Fechas y conceptos que importan</strong>
+
+    <p>
+      Esta sección utiliza salarios mínimos de 2026, costos alimentarios
+      de octubre de 2026 y datos de ingresos laborales del segundo
+      trimestre de 2025. Sus períodos y poblaciones de referencia
+      son distintos.
+    </p>
+  </aside>
+
+  <!-- 01. TABLA DE SALARIOS MÍNIMOS -->
+  <section class="it-panel" aria-labelledby="it-titulo-salarios">
+    <p class="subtitulo">01 / SALARIO MÍNIMO</p>
+
+    <h3 id="it-titulo-salarios">Tarifas según actividad y circunscripción</h3>
+
+    <p>
+      La circunscripción económica 1 (CE1) corresponde al departamento
+      de Guatemala. La circunscripción económica 2 (CE2) comprende
+      los demás departamentos. Cada una tiene tarifas según la
+      actividad económica.
+    </p>
+
+    <div class="it-tabla">
+      <table>
+        <caption>
+          Salarios mínimos mensuales de 2026, en quetzales
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Circunscripción y actividad</th>
+            <th scope="col">Salario base</th>
+            <th scope="col">Bonificación</th>
+            <th scope="col">Total mensual</th>
+          </tr>
+        </thead>
+
+        <tbody id="it-tabla-salarios"></tbody>
+      </table>
+    </div>
+
+    <p class="it-fuente">
+      Fuente:
+      <a
+        href="https://mintrabajo.gob.gt/salario-minimo/"
+        target="_blank"
+        rel="noopener noreferrer">
+        MINTRAB · Salario mínimo 2026
+      </a>.
+      Los totales se muestran antes de descuentos.
+    </p>
+  </section>
+
+  <!-- 02. TABLA DE CANASTA BÁSICA ALIMENTARIA -->
+  <section class="it-panel" aria-labelledby="it-titulo-canasta">
+    <p class="subtitulo">02 / CANASTA BÁSICA ALIMENTARIA</p>
+
+    <h3 id="it-titulo-canasta">Costo mensual de la alimentación</h3>
+
+    <p>
+      La Canasta Básica Alimentaria (CBA) estima el costo de un conjunto
+      de alimentos. El INE publica costos por persona para las áreas
+      urbana y rural.
+    </p>
+
+    <div class="it-tabla">
+      <table>
+        <caption>
+          Costo mensual por persona · Octubre de 2026
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Área</th>
+            <th scope="col">Costo alimentario</th>
+          </tr>
+        </thead>
+
+        <tbody id="it-tabla-canasta"></tbody>
+      </table>
+    </div>
+
+    <p class="it-nota">
+      La canasta alimentaria no incluye todos los gastos del hogar.
+      Cubrirla no significa cubrir también vivienda, transporte,
+      educación, salud y otros bienes y servicios.
+    </p>
+
+    <p class="it-fuente">
+      Fuente:
+      <a
+        href="https://www.ine.gob.gt/sistema/uploads/2026/11/09/2026110995835SVWfekhSUIXbU26Pt2PNl4Yi4EHhEhNx.pdf"
+        target="_blank"
+        rel="noopener noreferrer">
+        INE · Canasta Básica Alimentaria, octubre de 2026
+      </a>.
+    </p>
+  </section>
+
+  <!-- 03. COMPARADOR DE SALARIO Y COSTO ALIMENTARIO -->
+  <section class="it-panel" aria-labelledby="it-titulo-comparador">
+    <p class="subtitulo">03 / COMPARADOR INTERACTIVO</p>
+
+    <h3 id="it-titulo-comparador">Ingreso y alimentación del hogar</h3>
+
+    <p>
+      Seleccioná una tarifa y las características del hogar.
+      El cálculo supone que cada persona perceptora recibe la misma
+      tarifa seleccionada.
+    </p>
+
+    <div class="it-controles">
+      <label for="it-salario">
+        Tarifa salarial de 2026
+        <select id="it-salario"></select>
+      </label>
+
+      <label for="it-area">
+        Área de residencia del hogar
+
+        <select id="it-area">
+          <option value="urbana">Urbana</option>
+          <option value="rural">Rural</option>
+        </select>
+      </label>
+
+      <label for="it-personas">
+        Integrantes del hogar
+
+        <input
+          id="it-personas"
+          type="number"
+          min="1"
+          max="20"
+          step="1"
+          value="4"
+          required>
+      </label>
+
+      <label for="it-perceptores">
+        Personas que reciben ingreso
+
+        <input
+          id="it-perceptores"
+          type="number"
+          min="1"
+          max="20"
+          step="1"
+          value="1"
+          required>
+      </label>
+    </div>
+
+    <label class="it-checkbox" for="it-bono">
+      <input id="it-bono" type="checkbox" checked>
+      Incluir bonificación incentivo de Q250 por persona perceptora
+    </label>
+
+    <p class="it-fuente">
+      La circunscripción salarial y el área urbana o rural son
+      clasificaciones distintas; por eso se seleccionan por separado.
+    </p>
+
+    <div
+      id="it-resultado"
+      class="it-resultado"
+      role="status">
+    </div>
+
+    <figure>
+      <figcaption>
+        Ingreso y costo alimentario mensual del hogar
+      </figcaption>
+
+      <p class="it-fuente">
+        Ambas barras comparten una escala que se ajusta al escenario.
+      </p>
+
+      <div id="it-grafico"></div>
+    </figure>
+
+    <details class="it-formulas">
+      <summary>¿Cómo se calcula?</summary>
+
+      <p>
+        <strong>Ingreso del hogar:</strong>
+        ingreso individual seleccionado × personas perceptoras.
+      </p>
+
+      <p>
+        <strong>Costo alimentario estimado:</strong>
+        costo por persona del área seleccionada × integrantes.
+      </p>
+
+      <p>
+        <strong>Saldo:</strong>
+        ingreso del hogar − costo alimentario.
+      </p>
+
+      <p>
+        <strong>Cobertura:</strong>
+        ingreso del hogar ÷ costo alimentario × 100.
+      </p>
+
+      <p>
+        Es una estimación educativa antes de descuentos. No determina
+        el ingreso real ni la situación de pobreza de una familia.
+      </p>
+    </details>
+  </section>
+
+  <!-- 04. TABLA Y COMPARADOR DE BRECHA DE INGRESOS -->
+  <section class="it-panel" aria-labelledby="it-titulo-brecha">
+    <p class="subtitulo">04 / BRECHA DE INGRESOS POR GÉNERO</p>
+
+    <h3 id="it-titulo-brecha">
+      Comparación de los ingresos laborales
+    </h3>
+
+    <div class="it-tabla">
+      <table>
+        <caption>
+          Ingreso laboral mensual promedio · Segundo trimestre de 2025
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Sexo registrado por la fuente</th>
+            <th scope="col">Ingreso promedio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">Hombres</th>
+            <td>Q3,042.00</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Mujeres</th>
+            <td>Q2,176.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      La diferencia era de Q866 mensuales. Tomando el ingreso de
+      los hombres como referencia, el INE reporta una brecha de 28.5 %.
+    </p>
+
+    <label for="it-contexto">
+      <strong>Explorar por contexto:</strong>
+    </label>
+
+    <select id="it-contexto">
+      <option value="nacional">Total nacional</option>
+      <option value="indigena">Población indígena</option>
+      <option value="rural">Área rural</option>
+    </select>
+
+    <p
+      id="it-brecha-resultado"
+      class="it-resultado"
+      role="status">
+    </p>
+
+    <figure>
+      <figcaption>
+        Ingreso relativo: hombres de cada grupo = Q100
+      </figcaption>
+
+      <div id="it-brecha-grafico"></div>
+    </figure>
+
+    <p class="it-nota">
+      Estas diferencias corresponden a ingresos laborales promedio,
+      no a salarios mínimos distintos por sexo. No comparan
+      necesariamente el mismo trabajo ni las mismas horas y no
+      permiten atribuir toda la diferencia a una sola causa.
+    </p>
+
+    <p class="it-fuente">
+      Fuente:
+      <a
+        href="https://www.ine.gob.gt/wp-content/uploads/2026/08/Brechas-de-ingresos-laborales-en-Guatemala..pdf"
+        target="_blank"
+        rel="noopener noreferrer">
+        INE · Brechas de ingresos laborales en Guatemala
+      </a>.
+      Datos de la ENEIC, segundo trimestre de 2025.
+    </p>
+  </section>
+
+  <!-- REFERENCIAS DEL APORTE -->
+  <section
+    class="it-panel it-referencias"
+    aria-labelledby="it-titulo-referencias">
+
+    <h3 id="it-titulo-referencias">Referencias de los indicadores</h3>
+
+    <p>
+      Instituto Nacional de Estadística. (2026a).
+      <em>Brechas de ingresos laborales en Guatemala</em>.
+      <a
+        href="https://www.ine.gob.gt/wp-content/uploads/2026/08/Brechas-de-ingresos-laborales-en-Guatemala..pdf"
+        target="_blank"
+        rel="noopener noreferrer">
+        https://www.ine.gob.gt/wp-content/uploads/2026/08/Brechas-de-ingresos-laborales-en-Guatemala..pdf
+      </a>
+    </p>
+
+    <p>
+      Instituto Nacional de Estadística. (2026b).
+      <em>Canasta Básica Alimentaria: Octubre 2026</em>.
+      <a
+        href="https://www.ine.gob.gt/sistema/uploads/2026/11/09/2026110995835SVWfekhSUIXbU26Pt2PNl4Yi4EHhEhNx.pdf"
+        target="_blank"
+        rel="noopener noreferrer">
+        https://www.ine.gob.gt/sistema/uploads/2026/11/09/2026110995835SVWfekhSUIXbU26Pt2PNl4Yi4EHhEhNx.pdf
+      </a>
+    </p>
+
+    <p>
+      Ministerio de Trabajo y Previsión Social. (s. f.).
+      <em>Salario mínimo</em>.
+      Recuperado el 18 de noviembre de 2026, de
+      <a
+        href="https://mintrabajo.gob.gt/salario-minimo/"
+        target="_blank"
+        rel="noopener noreferrer">
+        https://mintrabajo.gob.gt/salario-minimo/
+      </a>
+    </p>
+  </section>
+
+  <noscript>
+    <p>
+      Activá JavaScript para cargar las tablas y utilizar
+      los comparadores.
+    </p>
+  </noscript>
+</div>
+<!-- FIN DEL APORTE: INGRESOS Y TRABAJO · INTEGRANTE 2 -->
+
+
+
+
+
+
+<!-- INICIO DEL APORTE: MIGRACIÓN · INTEGRANTE 2 -->
+<div
+  id="indicadores-migracion"
+  class="seccion capitulo-migracion">
+
+  <p class="subtitulo">INDICADORES DE MIGRACIÓN</p>
+
+  <h2>Emigración por sexo y edad</h2>
+
+  <aside class="mi-nota">
+    <strong>Fuente y período de referencia</strong>
+
+    <p>
+      Datos del Censo 2018 sobre personas que salieron de Guatemala
+      entre 2002 y la fecha del censo y no habían regresado.
+      La variable disponible para esta comparación es sexo.
+    </p>
+
+    <p>
+      La información procede de hogares que permanecían en Guatemala.
+      No representa un registro completo de todas las personas
+      guatemaltecas residentes en el extranjero.
+    </p>
+  </aside>
+
+  <!-- TABLA Y GRÁFICO POR SEXO -->
+  <section class="mi-panel" aria-labelledby="mi-titulo-sexo">
+    <p class="subtitulo">01 / DISTRIBUCIÓN POR SEXO</p>
+
+    <h3 id="mi-titulo-sexo">Población emigrante según sexo</h3>
+
+    <p>
+      El gráfico del INE utiliza una base de 242,203 personas
+      emigrantes con información reportada.
+    </p>
+
+    <div class="mi-tabla">
+      <table>
+        <caption>
+          Población emigrante según sexo · Censo 2018
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Sexo</th>
+            <th scope="col">Personas</th>
+            <th scope="col">Porcentaje</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">Hombres</th>
+            <td>187,756</td>
+            <td>77,5 %</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Mujeres</th>
+            <td>54,447</td>
+            <td>22,5 %</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Total</th>
+            <td>242,203</td>
+            <td>100,0 %</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <label for="mi-unidad">
+      <strong>Mostrar gráfico en:</strong>
+    </label>
+
+    <select id="mi-unidad">
+      <option value="cantidad">Cantidad de personas</option>
+      <option value="porcentaje">Porcentaje</option>
+    </select>
+
+    <figure>
+      <figcaption>Comparación de la población emigrante por sexo</figcaption>
+
+      <p id="mi-escala-sexo" class="mi-fuente"></p>
+
+      <div id="mi-grafico-sexo" aria-live="polite"></div>
+    </figure>
+
+    <p class="mi-fuente">
+      Fuente: Instituto Nacional de Estadística (2019),
+      gráfico 18, p. 54.
+    </p>
+  </section>
+
+  <!-- TABLA Y GRÁFICO POR EDAD -->
+  <section class="mi-panel" aria-labelledby="mi-titulo-edad">
+    <p class="subtitulo">02 / EDAD AL EMIGRAR</p>
+
+    <h3 id="mi-titulo-edad">Distribución por grupos de edad</h3>
+
+    <div class="mi-tabla">
+      <table>
+        <caption>
+          Edad al salir del país · Distribución porcentual · Censo 2018
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Edad al salir</th>
+            <th scope="col">Hombres</th>
+            <th scope="col">Mujeres</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">0–14 años</th>
+            <td>4,9 %</td>
+            <td>9,1 %</td>
+            <td>5,9 %</td>
+          </tr>
+
+          <tr>
+            <th scope="row">15–29 años</th>
+            <td>63,0 %</td>
+            <td>61,2 %</td>
+            <td>62,6 %</td>
+          </tr>
+
+          <tr>
+            <th scope="row">30–49 años</th>
+            <td>29,3 %</td>
+            <td>26,3 %</td>
+            <td>28,6 %</td>
+          </tr>
+
+          <tr>
+            <th scope="row">50 años o más</th>
+            <td>2,7 %</td>
+            <td>3,4 %</td>
+            <td>2,9 %</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <label for="mi-grupo">
+      <strong>Mostrar en el gráfico:</strong>
+    </label>
+
+    <select id="mi-grupo">
+      <option value="comparar">Comparar hombres y mujeres</option>
+      <option value="hombres">Hombres</option>
+      <option value="mujeres">Mujeres</option>
+      <option value="total">Total</option>
+    </select>
+
+    <figure>
+      <figcaption>Edad al emigrar según el grupo seleccionado</figcaption>
+
+      <p class="mi-fuente">
+        Escala fija de 0 a 100 %. Cada columna de la tabla representa
+        la distribución dentro de su propio grupo.
+      </p>
+
+      <div id="mi-grafico-edad"></div>
+    </figure>
+
+    <p id="mi-lectura" class="mi-nota" role="status"></p>
+
+    <p class="mi-fuente">
+      Fuente: Instituto Nacional de Estadística (2019),
+      gráfico 19, p. 54. Los porcentajes pueden no sumar exactamente
+      100 % debido al redondeo.
+    </p>
+  </section>
+
+  <!-- ACLARACIONES DE LOS INDICADORES -->
+  <aside class="mi-nota">
+    <strong>Cómo interpretar las cifras</strong>
+
+    <p>
+      La edad corresponde al momento de salir del país.
+      Los porcentajes describen a las personas emigrantes de cada
+      grupo; no indican la probabilidad de emigrar de toda la
+      población guatemalteca de esa edad.
+    </p>
+
+    <p>
+      Estas estadísticas de emigración no deben confundirse
+      con registros de personas retornadas o de migración interna.
+    </p>
+  </aside>
+
+  <!-- REFERENCIA APA 7 -->
+  <section class="mi-panel mi-referencias">
+    <h3>Referencia de los indicadores</h3>
+
+    <p>
+      Instituto Nacional de Estadística. (2019).
+      <em>
+        Resultados del XII Censo Nacional de Población y VII de Vivienda:
+        Censo 2018
+      </em>.
+      <a
+        href="https://www.ine.gob.gt/sistema/uploads/2021/11/19/202111192139096rGNQ5SfAlepmPGfYTovW9MF6X2turyT.pdf"
+        target="_blank"
+        rel="noopener noreferrer">
+        https://www.ine.gob.gt/sistema/uploads/2021/11/19/202111192139096rGNQ5SfAlepmPGfYTovW9MF6X2turyT.pdf
+      </a>
+    </p>
+  </section>
+
+  <noscript>
+    <p>
+      Las tablas se pueden consultar sin JavaScript.
+      Activá JavaScript para utilizar los gráficos interactivos.
+    </p>
+  </noscript>
+</div>
+<!-- FIN DEL APORTE: MIGRACIÓN · INTEGRANTE 2 -->
+
 
 <!-- REFERENCIAS EN ORDEN ALFABÉTICO -->
 <section id="referencias" class="seccion referencias">
