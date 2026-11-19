@@ -11,12 +11,14 @@
   <link rel="stylesheet" href="educacion.css">
   <link rel="stylesheet" href="indicadores-educativos.css">
   <link rel="stylesheet" href="migracion.css">
+  <link rel="stylesheet" href="economia-remesas.css">
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
   <script src="script.js" defer></script>
   <script src="salud.js" defer></script>
   <script src="educacion.js" defer></script>
   <script src="indicadores-educativos.js" defer></script>
   <script src="migracion.js" defer></script>
+  <script src="economia-remesas.js" defer></script>
 </head>
 
 <body>
@@ -29,6 +31,8 @@
     <a href="#educacion">Educación</a>
     <a href="#salud">Salud</a>
     <a href="#migracion">Migración</a>
+    <a href="#economia">Economía</a>
+    <a href="#remesas">Remesas</a>
     <a href="#referencias">Referencias</a>
   </nav>
 </header>
@@ -53,12 +57,12 @@
 
 <section id="explorar" class="seccion centrada">
   <p class="subtitulo">DESCUBRE GUATEMALA</p>
-  <h2>Cuatro dimensiones, una misma realidad.</h2>
+  <h2>Seis dimensiones, una misma realidad.</h2>
   <p class="texto-centrado">
     Explora los desafíos y las oportunidades del desarrollo
     humano en Guatemala.
   </p>
-  <div class="cuadricula tres migra-indice">
+  <div class="cuadricula tres migra-indice er-indice">
     <article class="tarjeta">
       <span class="numero">01 / DESARROLLO</span>
       <i data-lucide="users"></i>
@@ -86,6 +90,20 @@
       <h3>Migración</h3>
       <p>Comprende los riesgos de la migración irregular y la importancia de la protección.</p>
       <a href="#migracion">Explorar capítulo ↗</a>
+    </article>
+    <article class="tarjeta">
+      <span class="numero">05 / ECONOMÍA</span>
+      <i data-lucide="briefcase-business"></i>
+      <h3>Economía</h3>
+      <p>Explora el desempleo por pueblo de pertenencia y las diferencias en la informalidad.</p>
+      <a href="#economia">Explorar capítulo ↗</a>
+    </article>
+    <article class="tarjeta">
+      <span class="numero">06 / REMESAS</span>
+      <i data-lucide="hand-coins"></i>
+      <h3>Remesas</h3>
+      <p>Descubre sus principales usos y el ingreso de remesas durante 2026.</p>
+      <a href="#remesas">Explorar capítulo ↗</a>
     </article>
   </div>
 </section>
@@ -954,12 +972,150 @@
 </section>
 <!-- Final del apartado de migración -->
 
+
+<!-- INICIO ECONOMÍA Y REMESAS: contenido añadido sin cambiar los capítulos previos. -->
+<section id="economia" class="seccion er-capitulo" aria-labelledby="eco-titulo">
+  <div class="er-cabecera">
+    <p class="subtitulo">CAPÍTULO 05 / ECONOMÍA</p>
+    <h2 id="eco-titulo">Economía: trabajar y vivir con oportunidades.</h2>
+    <p class="er-entradilla">Tener trabajo, buscarlo y contar con protección laboral son situaciones distintas. Explora qué nos dicen el desempleo y la informalidad sobre las oportunidades económicas en Guatemala.</p>
+    <p>El Instituto Nacional de Estadística (INE, <a href="#ref-er-ine">2026</a>) permite observar estas diferencias mediante la Encuesta Nacional de Empleo e Ingresos Continua (ENEIC). Los datos siguientes corresponden a personas de 15 años o más y conservan los períodos y las agrupaciones de la publicación.</p>
+    <p class="er-corte">Actualización editorial: 18 de noviembre de 2026 · Último trimestre incluido en la fuente consultada: enero–marzo de 2026.</p>
+  </div>
+  <div id="eco-control" class="er-control" hidden>
+    <label for="eco-periodo">Elige el período de los indicadores y de los dos gráficos</label>
+    <select id="eco-periodo" aria-controls="eco-metricas eco-etnia eco-informalidad"><option value="0">IV trimestre de 2024</option><option value="1">I trimestre de 2025</option><option value="2">II trimestre de 2025</option><option value="3">III trimestre de 2025</option><option value="4">IV trimestre de 2025</option><option value="5" selected>I trimestre de 2026</option></select>
+    <p id="eco-estado" class="er-solo-lector" role="status" aria-live="polite"></p>
+  </div>
+  <p><strong data-eco-periodo>I trimestre de 2026</strong> · Estimaciones de la ENEIC</p>
+  <div class="er-metricas" id="eco-metricas">
+    <dl class="er-metrica"><dt>Desempleo abierto nacional</dt><dd><strong class="er-cifra" id="eco-cifra-desempleo">2.2 %</strong><span class="er-unidad">De la población económicamente activa.</span></dd></dl>
+    <dl class="er-metrica"><dt>Informalidad nacional</dt><dd><strong class="er-cifra" id="eco-cifra-informalidad">64.9 %</strong><span class="er-unidad">De las personas ocupadas del país.</span></dd></dl>
+    <dl class="er-metrica"><dt>Informalidad rural</dt><dd><strong class="er-cifra" id="eco-cifra-rural">75.6 %</strong><span class="er-unidad">De las personas ocupadas del área rural.</span></dd></dl>
+  </div>
+  <p class="er-fuente">Fuente: INE (<a href="#ref-er-ine">2026</a>), apartados 2.5–2.7, pp. 29–31. Cada porcentaje tiene una población de referencia distinta.</p>
+
+  <section class="er-bloque" aria-labelledby="eco-etnia-titulo">
+    <p class="subtitulo">01 / DESEMPLEO Y PUEBLO DE PERTENENCIA</p>
+    <h3 id="eco-etnia-titulo">¿Quiénes integran la población desocupada?</h3>
+    <p>El gráfico muestra cómo se distribuye el total de personas desocupadas entre las dos agrupaciones que publica el INE.</p>
+    <div class="er-panel">
+      <figure aria-labelledby="eco-etnia-caption">
+        <figcaption id="eco-etnia-caption">Distribución de la población desocupada · <span data-eco-periodo>I trimestre de 2026</span></figcaption>
+        <p class="er-escala">Porcentaje del total de personas desocupadas · Escala de 0 a 100 %.</p>
+        <div id="eco-etnia"><div class="er-barra-fila"><span>Pueblos indígenas</span><div class="er-barra-fondo" aria-hidden="true"><span class="er-barra" style="width:23.1%"></span></div><strong>23.1 %</strong></div><div class="er-barra-fila"><span>Ladino/a, mestizo/a y otros</span><div class="er-barra-fondo" aria-hidden="true"><span class="er-barra er-barra-alterna" style="width:76.9%"></span></div><strong>76.9 %</strong></div></div>
+      </figure>
+      <aside class="er-nota"><h4>Una distinción importante</h4><p id="eco-lectura-etnia">De cada 100 personas desocupadas, aproximadamente 23.1 pertenecían a pueblos indígenas y 76.9 al conjunto ladino, mestizo y otros.</p><p><strong>Estas proporciones no son tasas de desempleo de cada grupo.</strong> Para calcular esas tasas se necesita la población económicamente activa de cada agrupación; este gráfico no permite concluir cuál tiene mayor riesgo de desempleo.</p></aside>
+      <p class="er-fuente">Fuente: INE (<a href="#ref-er-ine">2026</a>), apartado 4.2, p. 61. «Pueblos indígenas» agrupa a población maya, xinka y garífuna; «otros» incluye población afrodescendiente y extranjera. La fuente no desglosa aquí cada pueblo por separado.</p>
+      <details class="er-tabla-detalle"><summary>Consultar la tabla de todos los trimestres</summary><div class="er-tabla" tabindex="0" role="region" aria-label="Distribución de las personas desocupadas por pueblo de pertenencia (%)"><table><caption>Distribución de las personas desocupadas por pueblo de pertenencia (%)</caption><thead><tr><th scope="col">Período</th><th scope="col">Pueblos indígenas</th><th scope="col">Ladino/a, mestizo/a y otros</th></tr></thead><tbody><tr><th scope="row">IV trimestre de 2024</th><td>24.4</td><td>75.6</td></tr><tr><th scope="row">I trimestre de 2025</th><td>24.1</td><td>75.9</td></tr><tr><th scope="row">II trimestre de 2025</th><td>24.4</td><td>75.6</td></tr><tr><th scope="row">III trimestre de 2025</th><td>25.4</td><td>74.6</td></tr><tr><th scope="row">IV trimestre de 2025</th><td>29.2</td><td>70.8</td></tr><tr><th scope="row">I trimestre de 2026</th><td>23.1</td><td>76.9</td></tr></tbody></table></div></details>
+    </div>
+  </section>
+
+  <section class="er-bloque" aria-labelledby="eco-informalidad-titulo">
+    <p class="subtitulo">02 / ECONOMÍA INFORMAL</p>
+    <h3 id="eco-informalidad-titulo">Trabajar no siempre significa tener protección.</h3>
+    <p>La tasa de informalidad describe las condiciones del empleo de quienes están ocupados. El desempleo abierto, en cambio, se refiere a quienes no tienen trabajo, están disponibles y lo buscan. Conviene leer ambos indicadores juntos.</p>
+    <div class="er-panel">
+      <figure aria-labelledby="eco-informal-caption">
+        <figcaption id="eco-informal-caption">Informalidad por dominio de estudio · <span data-eco-periodo>I trimestre de 2026</span></figcaption>
+        <p class="er-escala">Porcentaje de personas ocupadas dentro de cada dominio · Escala de 0 a 100 %.</p>
+        <div id="eco-informalidad"><div class="er-barra-fila"><span>Total nacional</span><div class="er-barra-fondo" aria-hidden="true"><span class="er-barra er-barra-alterna" style="width:64.9%"></span></div><strong>64.9 %</strong></div><div class="er-barra-fila"><span>Urbano metropolitano</span><div class="er-barra-fondo" aria-hidden="true"><span class="er-barra" style="width:43.7%"></span></div><strong>43.7 %</strong></div><div class="er-barra-fila"><span>Resto urbano</span><div class="er-barra-fondo" aria-hidden="true"><span class="er-barra" style="width:64.7%"></span></div><strong>64.7 %</strong></div><div class="er-barra-fila"><span>Rural nacional</span><div class="er-barra-fondo" aria-hidden="true"><span class="er-barra" style="width:75.6%"></span></div><strong>75.6 %</strong></div></div>
+      </figure>
+      <p class="er-nota" id="eco-lectura-informalidad">La diferencia entre el área rural y el área urbana metropolitana fue de 31.9 puntos porcentuales.</p>
+      <p class="er-fuente">Fuente: INE (<a href="#ref-er-ine">2026</a>), apartados 2.5 y 2.6, pp. 29–30. Las tasas de los dominios no se suman: cada una utiliza su propia población ocupada como denominador.</p>
+      <details class="er-tabla-detalle"><summary>Consultar la tabla de todos los trimestres</summary><div class="er-tabla" tabindex="0" role="region" aria-label="Tasa de informalidad: porcentaje de personas ocupadas en cada dominio"><table><caption>Tasa de informalidad: porcentaje de personas ocupadas en cada dominio</caption><thead><tr><th scope="col">Período</th><th scope="col">Total nacional</th><th scope="col">Urbano metropolitano</th><th scope="col">Resto urbano</th><th scope="col">Rural nacional</th></tr></thead><tbody><tr><th scope="row">IV trimestre de 2024</th><td>66.7</td><td>48.8</td><td>65.5</td><td>77.4</td></tr><tr><th scope="row">I trimestre de 2025</th><td>66.1</td><td>46.1</td><td>65.7</td><td>76.9</td></tr><tr><th scope="row">II trimestre de 2025</th><td>66.2</td><td>45.2</td><td>65.4</td><td>77.8</td></tr><tr><th scope="row">III trimestre de 2025</th><td>65.9</td><td>44.1</td><td>65.0</td><td>78.1</td></tr><tr><th scope="row">IV trimestre de 2025</th><td>65.6</td><td>44.3</td><td>65.0</td><td>77.3</td></tr><tr><th scope="row">I trimestre de 2026</th><td>64.9</td><td>43.7</td><td>64.7</td><td>75.6</td></tr></tbody></table></div></details>
+      <button type="button" class="er-descargar" id="eco-descargar" hidden>Descargar datos de Economía (CSV)</button>
+    </div>
+  </section>
+
+  <aside class="er-bloque er-lectura" aria-labelledby="eco-contexto-titulo">
+    <p class="subtitulo">03 / UNA LECTURA MÁS AMPLIA</p>
+    <h3 id="eco-contexto-titulo">Las diferencias no se explican con una sola cifra.</h3>
+    <p>Canelas y Gisselquist (<a href="#ref-er-canelas">2018</a>) documentaron desigualdades educativas y laborales, tanto entre población indígena y ladina como entre distintos grupos indígenas. Su estudio utilizó la ENCOVI de 2000 y 2011: aporta contexto histórico, no estimaciones de 2026.</p>
+    <p>Al interpretar los gráficos actuales, debemos reconocer la diversidad de experiencias que pueden quedar ocultas dentro de una categoría agregada. Una proporción del desempleo no resume por sí sola la calidad del trabajo ni todas las barreras económicas.</p>
+  </aside>
+  <noscript><p class="er-nota">Los gráficos muestran el I trimestre de 2026. Las tablas desplegables permiten consultar los demás períodos sin activar JavaScript.</p></noscript>
+</section>
+
+<section id="remesas" class="seccion fondo-claro er-capitulo" aria-labelledby="rem-titulo">
+  <div class="er-cabecera">
+    <p class="subtitulo">CAPÍTULO 06 / REMESAS</p>
+    <h2 id="rem-titulo">Remesas: recursos que conectan hogares.</h2>
+    <p class="er-entradilla">Detrás de cada envío hay trabajo y decisiones familiares. Conoce cuánto ha recibido Guatemala en 2026 y explora los principales destinos que la OIM identificó para estos recursos.</p>
+    <p>Los ingresos registrados por el Banco de Guatemala muestran el flujo de remesas hacia el país. Para conocer sus usos necesitamos otra fuente: una encuesta a los hogares receptores. Ambas mediciones responden preguntas diferentes.</p>
+    <p class="er-corte">Actualización editorial: 18 de noviembre de 2026 · Ingresos: enero–octubre de 2026 · Distribución por usos: encuesta de 2022.</p>
+  </div>
+  <div class="er-metricas">
+    <dl class="er-metrica"><dt>Remesas recibidas en 2026</dt><dd><strong class="er-cifra">22,484.9</strong><span class="er-unidad">Millones de US$ · Acumulado enero–octubre.<br>Fuente: Banco de Guatemala (<a href="#ref-er-banguat">s. f.</a>).</span></dd></dl>
+    <dl class="er-metrica"><dt>Frente al mismo período de 2025</dt><dd><strong class="er-cifra">+5.3 %</strong><span class="er-unidad">Cálculo con el acumulado de 2026 y la suma de enero–octubre de 2025: US$21,358.4 millones.</span></dd></dl>
+    <dl class="er-metrica"><dt>Datos mensuales disponibles</dt><dd><strong class="er-cifra">10 meses</strong><span class="er-unidad">El acumulado de 2026 todavía no representa un año completo.</span></dd></dl>
+  </div>
+
+  <section class="er-bloque" aria-labelledby="rem-usos-titulo">
+    <p class="subtitulo">01 / INFOGRAFÍA INTERACTIVA</p>
+    <h3 id="rem-usos-titulo">¿En qué se utilizan las remesas?</h3>
+    <p>Selecciona un destino para conocerlo. La Organización Internacional para las Migraciones (OIM, <a href="#ref-er-oim">2023</a>) clasificó el monto de las remesas de la encuesta de 2022 en cuatro grandes usos.</p>
+    <p class="er-nota"><strong>Año de los usos: 2022.</strong> Estos porcentajes describen el monto de remesas, no el porcentaje de hogares. No se presentan como una distribución observada en 2026.</p>
+    <div class="er-panel">
+      <figure aria-labelledby="rem-usos-caption">
+        <figcaption id="rem-usos-caption">Cuatro destinos del monto de las remesas · Guatemala, 2022</figcaption>
+        <div class="er-infografia">
+          <div class="er-anillo"><svg viewBox="0 0 300 300" aria-hidden="true" focusable="false"><circle data-rem-segmento="consumo" cx="150" cy="150" r="116" fill="none" stroke="#205a48" stroke-width="36" pathLength="100" stroke-dasharray="43.8 56.2" stroke-dashoffset="0"/><circle data-rem-segmento="inversion" cx="150" cy="150" r="116" fill="none" stroke="#8b5b2b" stroke-width="36" pathLength="100" stroke-dasharray="29.3 70.7" stroke-dashoffset="-43.8"/><circle data-rem-segmento="negocios" cx="150" cy="150" r="116" fill="none" stroke="#466d93" stroke-width="36" pathLength="100" stroke-dasharray="14.6 85.4" stroke-dashoffset="-73.1"/><circle data-rem-segmento="social" cx="150" cy="150" r="116" fill="none" stroke="#755185" stroke-width="36" pathLength="100" stroke-dasharray="12.3 87.7" stroke-dashoffset="-87.69999999999999"/></svg><div class="er-anillo-centro" aria-hidden="true"><strong id="rem-anillo-valor">43.8 %</strong><span id="rem-anillo-nombre">Consumo</span></div></div>
+          <div class="er-usos" role="group" aria-label="Destinos de las remesas"><button type="button" class="er-uso" style="--er-uso-color:#205a48" data-rem-uso="consumo" aria-pressed="true" aria-controls="rem-detalle" disabled><span class="er-uso-nombre">Consumo</span><span class="er-uso-cifra">43.8 %<span class="er-uso-monto" hidden data-rem-monto="consumo">Q438.0</span></span></button><button type="button" class="er-uso" style="--er-uso-color:#8b5b2b" data-rem-uso="inversion" aria-pressed="false" aria-controls="rem-detalle" disabled><span class="er-uso-nombre">Inversión y ahorro</span><span class="er-uso-cifra">29.3 %<span class="er-uso-monto" hidden data-rem-monto="inversion">Q293.0</span></span></button><button type="button" class="er-uso" style="--er-uso-color:#466d93" data-rem-uso="negocios" aria-pressed="false" aria-controls="rem-detalle" disabled><span class="er-uso-nombre">Consumo intermedio</span><span class="er-uso-cifra">14.6 %<span class="er-uso-monto" hidden data-rem-monto="negocios">Q146.0</span></span></button><button type="button" class="er-uso" style="--er-uso-color:#755185" data-rem-uso="social" aria-pressed="false" aria-controls="rem-detalle" disabled><span class="er-uso-nombre">Inversión social</span><span class="er-uso-cifra">12.3 %<span class="er-uso-monto" hidden data-rem-monto="social">Q123.0</span></span></button></div>
+        </div>
+      </figure>
+      <div id="rem-detalle" class="er-detalle-uso" role="region" aria-labelledby="rem-detalle-titulo" aria-live="polite" aria-atomic="true">
+        <h4 id="rem-detalle-titulo">Consumo · 43.8 %</h4>
+        <p id="rem-detalle-texto">Sostener la vida cotidiana: alimentos, vivienda, transporte y otros gastos del hogar.</p>
+        <p id="rem-detalle-ejemplo">Por ejemplo, comprar alimentos o pagar el transporte familiar.</p>
+        <p id="rem-detalle-idea">Cubrir necesidades básicas también contribuye al bienestar de las familias.</p>
+      </div>
+      <div id="rem-presupuesto" class="er-presupuesto" hidden>
+        <label for="rem-monto">Explora esas proporciones con un monto de ejemplo: <output id="rem-monto-salida" for="rem-monto">Q1,000.0</output></label>
+        <input type="range" id="rem-monto" min="100" max="10000" step="100" value="1000" aria-describedby="rem-ejemplo-nota">
+        <div class="er-limites" aria-hidden="true"><span>Q100</span><span>Q10,000</span></div>
+        <p class="er-fuente" id="rem-ejemplo-nota">Los montos de cada destino cambian al mover el control. Es una ilustración matemática basada en las proporciones de 2022; no es una recomendación de presupuesto ni una estimación de los usos de 2026.</p>
+        <p id="rem-presupuesto-estado" class="er-solo-lector" role="status" aria-live="polite"></p>
+      </div>
+      <p class="er-fuente">Fuente: OIM (<a href="#ref-er-oim">2023</a>), encuesta 2022, sección «Uso de remesas». Total: 100 %. Los ejemplos explican las categorías y no representan testimonios individuales.</p>
+      <details class="er-tabla-detalle"><summary>Consultar los cuatro usos y sus definiciones</summary><div class="er-tabla" tabindex="0" role="region" aria-label="Guatemala: distribución del monto de remesas por uso, encuesta 2022"><table><caption>Guatemala: distribución del monto de remesas por uso, encuesta 2022</caption><thead><tr><th scope="col">Destino</th><th scope="col">Porcentaje del monto</th><th scope="col">Qué comprende</th></tr></thead><tbody><tr><th scope="row">Consumo</th><td>43.8 %</td><td>Sostener la vida cotidiana: alimentos, vivienda, transporte y otros gastos del hogar.</td></tr><tr><th scope="row">Inversión y ahorro</th><td>29.3 %</td><td>Construcción o compra de vivienda, ahorro y otras inversiones de los hogares.</td></tr><tr><th scope="row">Consumo intermedio</th><td>14.6 %</td><td>Insumos y gastos vinculados con pequeños negocios o actividades productivas.</td></tr><tr><th scope="row">Inversión social</th><td>12.3 %</td><td>Recursos destinados a salud y educación, agrupados por la OIM como inversión social.</td></tr></tbody></table></div></details>
+    </div>
+  </section>
+
+  <section class="er-bloque" aria-labelledby="rem-evolucion-titulo">
+    <p class="subtitulo">02 / EL PULSO DE 2026</p>
+    <h3 id="rem-evolucion-titulo">Los envíos, mes a mes.</h3>
+    <p>Compara los mismos meses de 2025 y 2026. La serie expresa dinero recibido; no identifica cómo lo gastó cada familia.</p>
+    <div class="er-panel">
+      <figure aria-labelledby="rem-serie-caption"><figcaption id="rem-serie-caption">Ingreso mensual de divisas por remesas familiares</figcaption><p class="er-escala">Millones de US$ · Enero–octubre · Escala vertical de 0 a 3,000.</p>
+        <div class="er-grafico-desplazable" tabindex="0" role="region" aria-label="Gráfico mensual; desplázate horizontalmente si es necesario"><svg class="er-lineas" viewBox="0 0 720 310" aria-hidden="true" focusable="false"><line class="er-eje" x1="64" y1="262.0" x2="688" y2="262.0"/><text x="54" y="266.0" text-anchor="end">0</text><line class="er-eje" x1="64" y1="188.66666666666669" x2="688" y2="188.66666666666669"/><text x="54" y="192.66666666666669" text-anchor="end">1,000</text><line class="er-eje" x1="64" y1="115.33333333333334" x2="688" y2="115.33333333333334"/><text x="54" y="119.33333333333334" text-anchor="end">2,000</text><line class="er-eje" x1="64" y1="42.0" x2="688" y2="42.0"/><text x="54" y="46.0" text-anchor="end">3,000</text><polyline class="er-serie-2025" points="64.00,128.71 133.33,128.43 202.67,115.06 272.00,116.46 341.33,94.72 410.67,99.25 480.00,88.49 549.33,88.35 618.67,107.51 688.00,86.73"/><polyline class="er-serie-2026" points="64.00,118.66 133.33,123.11 202.67,82.93 272.00,104.98 341.33,99.10 410.67,91.46 480.00,80.97 549.33,91.30 618.67,97.67 688.00,80.93"/><text x="64.00" y="288" text-anchor="middle">Ene</text><text x="133.33" y="288" text-anchor="middle">Feb</text><text x="202.67" y="288" text-anchor="middle">Mar</text><text x="272.00" y="288" text-anchor="middle">Abr</text><text x="341.33" y="288" text-anchor="middle">May</text><text x="410.67" y="288" text-anchor="middle">Jun</text><text x="480.00" y="288" text-anchor="middle">Jul</text><text x="549.33" y="288" text-anchor="middle">Ago</text><text x="618.67" y="288" text-anchor="middle">Sep</text><text x="688.00" y="288" text-anchor="middle">Oct</text><line id="rem-marca-mes" x1="688" x2="688" y1="42" y2="262" stroke="#607268" stroke-dasharray="3 5"/><circle id="rem-punto-2025" cx="688" cy="86.73" r="6" fill="#8b5b2b" stroke="white" stroke-width="2"/><circle id="rem-punto-2026" cx="688" cy="80.93" r="6" fill="#205a48" stroke="white" stroke-width="2"/></svg></div>
+        <div class="er-leyenda"><span><i class="er-leyenda-2025" aria-hidden="true"></i>2025 · Línea discontinua</span><span><i aria-hidden="true"></i>2026 · Línea continua</span></div>
+      </figure>
+      <div class="er-control" id="rem-mes-control" hidden><label for="rem-mes">Elige un mes para comparar los dos años</label><select id="rem-mes" aria-controls="rem-comparacion"><option value="0">Enero</option><option value="1">Febrero</option><option value="2">Marzo</option><option value="3">Abril</option><option value="4">Mayo</option><option value="5">Junio</option><option value="6">Julio</option><option value="7">Agosto</option><option value="8">Septiembre</option><option value="9" selected>Octubre</option></select></div>
+      <div id="rem-comparacion"><p><strong id="rem-mes-titulo">Octubre</strong> · Millones de US$</p><div class="er-comparacion-mes"><p>2025<strong id="rem-mes-2025">2,390.0</strong></p><p>2026<strong id="rem-mes-2026">2,469.2</strong></p></div><p id="rem-variacion-mes">En octubre de 2026 se recibieron 3.3 % más remesas que en octubre de 2025.</p></div>
+      <p id="rem-mes-estado" class="er-solo-lector" role="status" aria-live="polite"></p>
+      <p class="er-fuente">Fuente: Banco de Guatemala (<a href="#ref-er-banguat">s. f.</a>), cuadro 1, consulta del 18 de noviembre de 2026. Variaciones calculadas con los valores publicados. El acumulado oficial puede diferir ligeramente de la suma de los meses por redondeo.</p>
+      <details class="er-tabla-detalle"><summary>Consultar la tabla mensual completa</summary><div class="er-tabla" tabindex="0" role="region" aria-label="Ingreso de divisas por remesas familiares: millones de US$, enero–octubre"><table><caption>Ingreso de divisas por remesas familiares: millones de US$, enero–octubre</caption><thead><tr><th scope="col">Mes</th><th scope="col">2025</th><th scope="col">2026</th></tr></thead><tbody><tr><th scope="row">Enero</th><td>1,817.6</td><td>1,954.7</td></tr><tr><th scope="row">Febrero</th><td>1,821.4</td><td>1,893.9</td></tr><tr><th scope="row">Marzo</th><td>2,003.7</td><td>2,441.8</td></tr><tr><th scope="row">Abril</th><td>1,984.6</td><td>2,141.2</td></tr><tr><th scope="row">Mayo</th><td>2,281.1</td><td>2,221.4</td></tr><tr><th scope="row">Junio</th><td>2,219.3</td><td>2,325.5</td></tr><tr><th scope="row">Julio</th><td>2,366.0</td><td>2,468.6</td></tr><tr><th scope="row">Agosto</th><td>2,368.0</td><td>2,327.7</td></tr><tr><th scope="row">Septiembre</th><td>2,106.7</td><td>2,240.8</td></tr><tr><th scope="row">Octubre</th><td>2,390.0</td><td>2,469.2</td></tr></tbody></table></div></details>
+      <button type="button" class="er-descargar" id="rem-descargar" hidden>Descargar datos de Remesas (CSV)</button>
+    </div>
+  </section>
+
+  <aside class="er-bloque er-lectura" aria-labelledby="rem-investigacion-titulo">
+    <p class="subtitulo">03 / LO QUE APORTA LA INVESTIGACIÓN</p>
+    <h3 id="rem-investigacion-titulo">Un apoyo que también responde a las crisis.</h3>
+    <p>Santos-Lozada y Cuxil (<a href="#ref-er-santos">2025</a>) estudiaron las remesas de Guatemala con datos mensuales de 2002 a 2024. Su análisis encontró que, después del inicio de la pandemia, los envíos superaron el escenario que el modelo estimaba sin ese impacto.</p>
+    <p>El artículo, publicado en <em>Economics Letters</em> y disponible en ScienceDirect, ayuda a comprender la respuesta de los envíos ante una crisis. Sus resultados corresponden a ese período y no establecen cómo se distribuyen los gastos familiares de 2026.</p>
+  </aside>
+  <noscript><p class="er-nota">Sin JavaScript puedes consultar el gráfico mensual y las tablas con los cuatro destinos y sus definiciones.</p></noscript>
+</section>
+<!-- FIN ECONOMÍA Y REMESAS -->
+
 <!-- REFERENCIAS EN ORDEN ALFABÉTICO -->
 <section id="referencias" class="seccion referencias">
   <p class="subtitulo">INVESTIGACIÓN Y TRANSPARENCIA</p>
   <h2>Referencias bibliográficas</h2>
   <p class="texto-referencias">
-    Fuentes utilizadas en los capítulos de Desarrollo Humano, Educación, Salud y Migración,
+    Fuentes utilizadas en los capítulos de Desarrollo Humano, Educación, Salud, Migración, Economía y Remesas,
     organizadas alfabéticamente según APA 7.
   </p>
 
@@ -973,6 +1129,18 @@
          target="_blank" rel="noopener noreferrer">
         Consultar fuente
       </a>
+    </p>
+
+    <p id="ref-er-banguat" data-ref-er="banguat">
+      Banco de Guatemala. (s. f.). <em>Ingreso de divisas por remesas familiares: Años 2002–2026</em> [Conjunto de datos]. Recuperado el 18 de noviembre de 2026, de
+      <a href="https://www.banguat.gob.gt/sites/default/files/banguat/estaeco/remesas/remfam2002_2026.htm" target="_blank" rel="noopener noreferrer">https://www.banguat.gob.gt/sites/default/files/banguat/estaeco/remesas/remfam2002_2026.htm</a>
+    </p>
+
+    <p id="ref-er-canelas" data-ref-er="canelas">
+      Canelas, C., &amp; Gisselquist, R. M. (2018). Human capital, labour market outcomes, and horizontal inequality in Guatemala. <em>Oxford Development Studies, 46</em>(3), 378–397.
+      <a href="https://doi.org/10.1080/13600818.2017.1388360" target="_blank" rel="noopener noreferrer">https://doi.org/10.1080/13600818.2017.1388360</a>
+      · <a href="https://www.wider.unu.edu/publication/human-capital-labour-market-outcomes-and-horizontal-inequality-guatemala-0" target="_blank" rel="noopener noreferrer">Ficha académica y acceso al artículo</a>
+      · <a href="https://scholar.google.com/scholar?q=10.1080%2F13600818.2017.1388360" target="_blank" rel="noopener noreferrer">Buscar en Google Académico</a>
     </p>
 
     <p>
@@ -1038,6 +1206,12 @@
      rel="noopener noreferrer">Consultar fuente</a>
 </p>
 
+    <p id="ref-er-ine" data-ref-er="ine">
+      Instituto Nacional de Estadística. (2026). <em>Encuesta Nacional de Empleo e Ingresos Continua (ENEIC) 2026: Informe de resultados</em>.
+      <a href="https://www.ine.gob.gt/wp-content/uploads/2026/09/INFORME-ENEIC-2026-4%C2%B0-TRIM-2024-1%C2%B0-TRIM-2026.pdf" target="_blank" rel="noopener noreferrer">Consultar informe oficial</a>
+      · <a href="https://www.ine.gob.gt/encuesta-nacional-de-empleo-e-ingresos/" target="_blank" rel="noopener noreferrer">Portal de la encuesta</a>
+    </p>
+
     <p data-ref-salud="teresa">
   Naciones Unidas en Guatemala. (2025, 11 de marzo).
   <em>Mujeres abren el camino a una mayor seguridad alimentaria y la nutrición</em>.
@@ -1045,6 +1219,12 @@
   <a href="https://guatemala.un.org/es/290665-mujeres-abren-el-camino-una-mayor-seguridad-alimentaria-y-la-nutrici%C3%B3n" target="_blank"
      rel="noopener noreferrer">Consultar fuente</a>
 </p>
+
+    <p id="ref-er-oim" data-ref-er="oim">
+      Organización Internacional para las Migraciones. (2023). <em>Encuesta sobre migración internacional de personas guatemaltecas y remesas 2022</em>.
+      <a href="https://infounitnca.iom.int/document/encuesta-sobre-migracion-internacional-de-personas-guatemaltecas-y-remesas-2022/" target="_blank" rel="noopener noreferrer">Ficha y descarga oficial</a>
+      · <a href="https://infounitnca.iom.int/uploads/RemesasGT2022/EncuestaRemesas2022_gt.pdf" target="_blank" rel="noopener noreferrer">Informe completo</a>
+    </p>
 
     <p id="ref-migra-oms-2025" data-ref-migracion="oms-2025">
       Organización Mundial de la Salud. (2025, 1 de septiembre).
@@ -1096,6 +1276,13 @@
          target="_blank" rel="noopener noreferrer">
         Consultar fuente
       </a>
+    </p>
+
+    <p id="ref-er-santos" data-ref-er="santos">
+      Santos-Lozada, A. R., &amp; Cuxil, E. R. (2025). The effect of the COVID-19 pandemic on remittances in Guatemala: A causal impact analysis. <em>Economics Letters, 252</em>, Artículo 112351.
+      <a href="https://doi.org/10.1016/j.econlet.2025.112351" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.econlet.2025.112351</a>
+      · <a href="https://www.sciencedirect.com/science/article/pii/S0165176525001880" target="_blank" rel="noopener noreferrer">ScienceDirect</a>
+      · <a href="https://scholar.google.com/scholar?q=10.1016%2Fj.econlet.2025.112351" target="_blank" rel="noopener noreferrer">Buscar en Google Académico</a>
     </p>
 
     <p data-ref-salud="desnutricion">
