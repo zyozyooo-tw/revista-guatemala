@@ -195,3 +195,30 @@
   actualizarSexo();
   actualizarEdades();
 })();
+
+
+/* Reflexión local: no se almacena ni transmite información. */
+(() => {
+  'use strict';
+  const seccion = document.getElementById('migra-reflexion');
+  if (!seccion) return;
+  const pregunta = seccion.querySelector('#migra-pregunta');
+  const respuesta = seccion.querySelector('#migra-respuesta-texto');
+  const estado = seccion.querySelector('#migra-reflexion-estado');
+  seccion.querySelector('#migra-limpiar').addEventListener('click', () => {
+    respuesta.value = '';
+    estado.textContent = 'Se limpió el texto de esta actividad.';
+    respuesta.focus();
+  });
+  seccion.querySelector('#migra-copiar').addEventListener('click', async () => {
+    if (!respuesta.value.trim()) { estado.textContent = 'Escribí una reflexión antes de copiar.'; respuesta.focus(); return; }
+    const texto = `${pregunta.options[pregunta.selectedIndex].text}\n\n${respuesta.value.trim()}`;
+    try {
+      await navigator.clipboard.writeText(texto);
+      estado.textContent = 'Reflexión copiada al portapapeles.';
+    } catch (_) {
+      respuesta.focus(); respuesta.select();
+      estado.textContent = 'No se pudo copiar automáticamente. Seleccioná el texto y presioná Ctrl+C.';
+    }
+  });
+})();
