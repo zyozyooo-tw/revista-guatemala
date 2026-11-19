@@ -447,3 +447,24 @@
 #indicadores-migracion .mi-grupo-edad {
   background: #fff;
 }
+
+/* Mejoras editoriales de Migración: colores y tipografía heredados de style.css. */
+.capitulo-migracion .migra-navegacion { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0 42px; }
+.capitulo-migracion .migra-navegacion a { padding:10px 16px; border:1px solid var(--menta); border-radius:999px; background:var(--claro); text-decoration:none; font-weight:700; font-size:14px; }
+.capitulo-migracion .migra-navegacion a:hover, .capitulo-migracion .migra-navegacion a:focus-visible { background:var(--menta); }
+.capitulo-migracion .migra-introduccion { max-width:920px; columns:2 330px; column-gap:46px; }
+.capitulo-migracion .migra-introduccion p { break-inside:avoid; margin:0 0 20px; line-height:1.85; }
+.capitulo-migracion .migra-perspectivas { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.capitulo-migracion .migra-perspectiva { padding:28px; background:#fff; border:1px solid var(--menta); border-radius:17px; }
+.capitulo-migracion .migra-perspectiva h4 { margin:18px 0 8px; font-size:25px; }
+.capitulo-migracion .migra-perspectiva p { margin:0 0 12px; }
+.capitulo-migracion .migra-nota-fuente { font-size:13px; color:var(--gris); margin-top:18px; }
+.capitulo-migracion .migra-reflexion-panel { max-width:800px; background:#fff; border:1px solid var(--menta); padding:28px; border-radius:17px; display:grid; gap:12px; }
+.capitulo-migracion .migra-reflexion-panel label { font-weight:700; }
+.capitulo-migracion .migra-reflexion-panel select, .capitulo-migracion .migra-reflexion-panel textarea { width:100%; padding:13px; border:1px solid #a9b7ab; border-radius:9px; color:var(--texto); background:white; font:inherit; }
+.capitulo-migracion .migra-reflexion-acciones { display:flex; gap:12px; flex-wrap:wrap; }
+.capitulo-migracion .migra-reflexion-acciones button { padding:12px 18px; background:var(--verde); color:#fff; border:1px solid var(--verde); border-radius:8px; font-weight:700; }
+.capitulo-migracion .migra-reflexion-acciones .migra-secundario { background:transparent; color:var(--verde); }
+.capitulo-migracion #migra-reflexion-estado { margin:0; color:var(--gris); }
+.migra-vuelta { font-size:14px; }
+@media(max-width:850px) { .capitulo-migracion .migra-perspectivas { grid-template-columns:1fr; } .capitulo-migracion .migra-introduccion { columns:1; } }
